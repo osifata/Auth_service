@@ -4,6 +4,7 @@
 ### Сервис аутентификации с защитой от ботов
 
 Веб-сервис регистрации и авторизации пользователей с математической CAPTCHA.
+##Ссылка на сервис: https://auth-service-vrqr.onrender.com
 
 ### Дизайн
 ![Image](https://github.com/user-attachments/assets/f630615a-6ec5-430b-945d-330a4edd32d3)
