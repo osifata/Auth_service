@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="card profile-card">
+    <h1>Добро пожаловать, <span id="profileUsername">...</span>!</h1>
+    <p class="subtitle">Информация об аккаунте</p>
+
+    <div id="message" class="message hidden"></div>
+
+    <div class="field">
+        <label>Имя пользователя</label>
+        <div class="field-value" id="username"></div>
+    </div>
+
+    <div class="field">
+        <label>Email</label>
+        <div class="field-value" id="email"></div>
+    </div>
+
+    <div class="field">
+        <label>Дата регистрации</label>
+        <div class="field-value" id="createdAt"></div>
+    </div>
+
+    <div class="field">
+        <label>Роль</label>
+        <div class="field-value" id="role"></div>
+    </div>
+
+    <button type="button" class="btn-submit" id="logoutButton">Выйти</button>
+</div>
+
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+</body>
+</html>

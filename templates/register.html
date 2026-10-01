@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="card">
+    <h1>Регистрация</h1>
+
+    <div id="message" class="message hidden"></div>
+
+    <form id="registerForm" novalidate>
+        <div class="input-wrapper">
+            <input id="username" type="text" name="username"
+                   placeholder="Введите имя пользователя"
+                   autocomplete="username">
+            <small class="error" id="usernameError"></small>
+        </div>
+
+        <div class="input-wrapper">
+            <input id="email" type="email" name="email"
+                   placeholder="example@mail.com"
+                   autocomplete="email">
+            <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="input-wrapper">
+            <input id="password" type="password" name="password"
+                   placeholder="Пароль"
+                   autocomplete="new-password">
+            <small class="error" id="passwordError"></small>
+        </div>
+
+        <div class="input-wrapper">
+            <input id="password_confirm" type="password"
+                   name="password_confirm"
+                   placeholder="Повторите пароль"
+                   autocomplete="new-password">
+            <small class="error" id="passwordConfirmError"></small>
+        </div>
+
+        <div class="captcha-question" id="captchaQuestion">
+            {{ captcha_question }}
+        </div>
+
+        <div class="input-wrapper">
+            <input id="captcha" type="text" name="captcha"
+                   placeholder="Введите ответ"
+                   inputmode="numeric"
+                   autocomplete="off">
+            <small class="error" id="captchaError"></small>
+        </div>
+
+        <div class="actions">
+            <button type="submit" class="btn-submit">
+                Зарегистрироваться
+            </button>
+            <p class="login-text">
+                Уже есть аккаунт?
+                <a href="{{ url_for('login_page') }}">Войти</a>
+            </p>
+        </div>
+    </form>
+</div>
+
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+</html>

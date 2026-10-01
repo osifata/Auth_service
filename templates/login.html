@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="card">
+    <h1>Вход</h1>
+
+    <div id="message" class="message hidden"></div>
+
+    <form id="loginForm" novalidate>
+        <div class="input-wrapper">
+            <input id="login" type="text" name="login"
+                   placeholder="Введите email или логин"
+                   autocomplete="username">
+            <small class="error" id="loginError"></small>
+        </div>
+
+        <div class="input-wrapper">
+            <input id="password" type="password" name="password"
+                   placeholder="Пароль"
+                   autocomplete="current-password">
+            <small class="error" id="passwordError"></small>
+        </div>
+
+        <div class="captcha-question" id="captchaQuestion">
+            {{ captcha_question }}
+        </div>
+
+        <div class="input-wrapper">
+            <input id="captcha" type="text" name="captcha"
+                   placeholder="Введите ответ"
+                   inputmode="numeric"
+                   autocomplete="off">
+            <small class="error" id="captchaError"></small>
+        </div>
+
+        <div class="actions">
+            <button type="submit" class="btn-submit">Войти</button>
+            <p class="register-text">
+                Еще нет аккаунта?
+                <a href="{{ url_for('register_page') }}">Зарегистрироваться</a>
+            </p>
+        </div>
+    </form>
+</div>
+
+<script>
+    const registrationSuccess = {{ 'true' if success_message else 'false' }};
+</script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>
